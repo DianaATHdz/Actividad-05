@@ -57,7 +57,7 @@ public class Participantes {
 	        list=list.substring(0, list.length()-1);
 	        return list;
 	    }
-	    public String getStudent(){
+	    public String getParticipantes(){
 	        return "Name="+this.name+", Id="+this.id;
 	    }
 	    //TOSTRING 

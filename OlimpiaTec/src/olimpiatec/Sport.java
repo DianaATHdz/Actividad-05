@@ -25,7 +25,7 @@ public class Sport {
     }
     
    //agregar estudiantes a la lista
-    public boolean addStudent(Participantes participante){
+    public boolean addParticipante (Participantes participante){
         for(Participantes temp : this.participantes) {
             if(temp.getName().equalsIgnoreCase(participante.getName())){
                 return false;
@@ -36,7 +36,7 @@ public class Sport {
         return true;
     }
     //remover estudiantes a la lista
-    public boolean removeStudent(Participantes participante){
+    public boolean removeParticipante (Participantes participante){
         for(Participantes temp : this.participantes) {
             if(temp.getName().equalsIgnoreCase(participante.getName())){
                 participantes.remove(temp);
