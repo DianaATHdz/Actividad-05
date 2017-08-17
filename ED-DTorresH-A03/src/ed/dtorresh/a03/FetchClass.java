@@ -21,7 +21,7 @@ abstract class FetchClass {
     public int[] randomV (int n){
         int[] vec = new int[n];
         for(int i=0;i<vec.length;i++){
-            vec[i]=(int)(Math.random()*10); //comando para mencionar un numero random
+            vec[i]=(int)(Math.random()*5); //comando para mencionar un numero random
         }
         return vec;
     }
@@ -44,5 +44,7 @@ abstract class FetchClass {
     public void showF(int n){
         System.out.println("El valor solicitado se encuentra en la posición " + n +" Del vector");
     }
+    
+    
        
 }

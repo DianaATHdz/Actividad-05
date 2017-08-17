@@ -9,7 +9,7 @@ package ed.dtorresh.a03;
  *
  * @author DianaAlessa
  */
-public class Binaria extends FetchClass {
+public class Binaria extends FetchClass implements Ordenamientos {
   
     public int fetch(int dato){ 
     int n = vector.length;
@@ -32,7 +32,22 @@ public class Binaria extends FetchClass {
      }
    }
    return -1;
- 
- }
+    }
 
+    @Override
+    public void seleccion() {
+         for (int i = 0; i < vector.length - 1; i++) {       //Para un numero i igual a cero, i debe ser menor que el largo del vector menos uno
+         int min = i;                                       //declarar variable minimo es igual a i
+         for (int j = i + 1; j < vector.length; j++){       //Aquí se irá corriendo el vector j que será donde se acomoden los numeros
+               if (vector[j] < vector[min]) {               //Si el vector j es menor se colocara
+                            min = j;
+                     }
+               }
+               if (i != min)  {                                //Si i es diferente  que el minimo
+                       int aux= vector[i];                     
+                       vector[i] = vector[min];
+                       vector[min] = aux;
+               }
+       }
+    } 
 }
