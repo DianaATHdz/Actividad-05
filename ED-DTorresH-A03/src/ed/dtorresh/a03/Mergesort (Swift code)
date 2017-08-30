@@ -1,1 +1,41 @@
+class binario: FetchClass, Sorting{
+    func merge(izquierda: inout [Int], derecha: inout [Int])->[Int] {
+        var result:[Int] = [Int]()
+        while((!izquierda.isEmpty)&&(!derecha.isEmpty)){
+            if(izquierda.first! <= derecha.first!){
+                result.append(izquierda.first!)
+                izquierda.removeFirst()
+            } else {
+                result.append(derecha.first!)
+                derecha.removeFirst()
+            }
+        }
+        while(!izquierda.isEmpty){
+            result.append(izquierda.first!)
+            izquierda.removeFirst()
+        }
+        while(!derecha.isEmpty){
+            result.append(derecha.first!)
+            derecha.removeFirst()
+        }
+        return result
+    }
 
+    func mergeSort(array: [Int])->[Int] {
+        if(array.count <= 1){
+            return array
+        }
+        var izquierda:[Int]=[Int]()
+        var derecha:[Int]=[Int]()
+        for index in stride(from: 0, to: (array.count-1), by: 1){
+            if(index<(array.count/2)){
+                izquierda.append(array[index])
+            } else {
+                derecha.append(array[index])
+            }
+        }
+        izquierda=mergeSort(array: izquierda)
+        derecha=mergeSort(array: derecha)
+        
+        return merge(izquierda: &izquierda, derecha: &derecha)
+    }
